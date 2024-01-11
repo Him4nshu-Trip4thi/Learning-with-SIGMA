@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Rhombus
 {
-    public static void FillRohmbus(int n)
+    public static void FillRhombus(int n)
     {
         for(int i=1;i<=n;i++)
         {
@@ -24,6 +24,6 @@ public class Rhombus
         System.out.print("Enter No. : ");
         int num=sc.nextInt();
 
-        FillRohmbus(num);
+        FillRhombus(num);
     }
 }
