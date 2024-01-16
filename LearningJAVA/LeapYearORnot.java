@@ -7,6 +7,7 @@ public class LeapYearORnot
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter Year in YYYY format : ");
         int year=sc.nextInt();
+        sc.close();
 
         boolean x=year%4==0;
         boolean y=year%100!=0;

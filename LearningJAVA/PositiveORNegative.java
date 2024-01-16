@@ -7,6 +7,7 @@ public class PositiveORNegative
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter Number : ");
         int number=sc.nextInt();
+        sc.close();
 
         if(number>=0)
         {

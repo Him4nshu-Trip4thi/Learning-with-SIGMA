@@ -24,6 +24,7 @@ public class ZeroOnesTriangle {
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter NO. : ");
         int num=sc.nextInt();
+        sc.close();
 
         ZeroOne(num);
     }

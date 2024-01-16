@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class isPalindrome 
 {
-    public static void isPalindrome(int n)
+    public static void checkPalindrome(int n)
     {
         int m=n;
         int rev=0;
@@ -25,8 +25,9 @@ public class isPalindrome
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter No. : ");
         int num=sc.nextInt();
+        sc.close();
 
-        isPalindrome(num);
+        checkPalindrome(num);
     }
     
 }

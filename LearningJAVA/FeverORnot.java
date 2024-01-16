@@ -6,6 +6,7 @@ public class FeverORnot
         Scanner sc =new Scanner(System.in);
         System.out.print("Enter Temperature : ");
         double temp=sc.nextDouble();
+        sc.close();
 
         if(temp>100)
         {

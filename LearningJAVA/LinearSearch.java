@@ -18,6 +18,7 @@ public class LinearSearch
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter key : ");
         int key=sc.nextInt();
+        sc.close();
 
         int series[]={9,7,8,5,6,4,2,0,3,1};
         int Index=L_Search(series,key);

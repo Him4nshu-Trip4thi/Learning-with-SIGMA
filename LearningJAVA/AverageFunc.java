@@ -13,6 +13,7 @@ public class AverageFunc
         int a=sc.nextInt();
         int b=sc.nextInt();
         int c=sc.nextInt();
+        sc.close();
 
         System.out.println("The Average of provided three numbers are : " + Average(a,b,c));
     }

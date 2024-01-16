@@ -6,6 +6,7 @@ public class SwappingVariable
         Scanner sc=new Scanner(System.in);
         int a=sc.nextInt();
         int b=sc.nextInt();
+        sc.close();
         int c=a;
         a=b;
         b=c;

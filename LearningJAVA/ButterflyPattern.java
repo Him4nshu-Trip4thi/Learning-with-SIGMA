@@ -43,6 +43,7 @@ public class ButterflyPattern
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter Name : ");
         int num=sc.nextInt();
+        sc.close();
 
         Butterfly(num);
 

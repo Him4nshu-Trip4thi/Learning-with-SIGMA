@@ -5,6 +5,7 @@ public class AreaOfSquare
     {
         Scanner sc=new Scanner(System.in);
         float side=sc.nextFloat();
+        sc.close();
         float Area=side*side;
         System.out.println(Area);
     }

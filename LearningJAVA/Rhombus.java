@@ -23,6 +23,7 @@ public class Rhombus
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter No. : ");
         int num=sc.nextInt();
+        sc.close();
 
         FillRhombus(num);
     }

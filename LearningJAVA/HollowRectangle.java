@@ -10,6 +10,7 @@ public class HollowRectangle
         int l=sc.nextInt();
         System.out.print("Enter Bredth : ");
         int b=sc.nextInt();
+        sc.close();
 
         for(int i=1;i<=l;i++)
         {

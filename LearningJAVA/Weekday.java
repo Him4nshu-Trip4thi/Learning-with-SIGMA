@@ -6,6 +6,7 @@ public class Weekday
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter Weekday Number (1-7) : ");
         int num=sc.nextInt();
+        sc.close();
 
         switch(num)
         {

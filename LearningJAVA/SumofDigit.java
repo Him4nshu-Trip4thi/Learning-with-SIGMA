@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class SumofDigit 
 {
-    public static int SumofDigit(int n)
+    public static int checkSumofDigit(int n)
     {
     int sum=0;
     while(n>0)
@@ -18,8 +18,9 @@ public class SumofDigit
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter No. : ");
         int num=sc.nextInt();
+        sc.close();
 
-        System.out.println(SumofDigit(num));
+        System.out.println(checkSumofDigit(num));
     }
     
 }

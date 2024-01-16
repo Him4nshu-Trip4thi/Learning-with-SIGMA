@@ -3,12 +3,11 @@ public class AverageABC
 {
     public static void main (String Args[])
     {
-        Scanner scA=new Scanner(System.in);
-        int A=scA.nextInt();
-        Scanner scB=new Scanner(System.in);
-        float B=scB.nextFloat();
-        Scanner scC=new Scanner(System.in);
-        int C=scC.nextInt();
+        Scanner sc=new Scanner(System.in);
+        int A=sc.nextInt();
+        float B=sc.nextFloat();
+        int C=sc.nextInt();
+        sc.close();
         float Average =(A+B+C)/3;
         System.out.println(Average);
     }

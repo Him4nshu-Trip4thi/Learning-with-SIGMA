@@ -34,6 +34,7 @@ public class HollowRhombus
         Scanner sc=new Scanner(System.in);
         System.out.print("Enter No. : ");
         int num=sc.nextInt();
+        sc.close();
 
         HollowRhombusPattern(num);
     }

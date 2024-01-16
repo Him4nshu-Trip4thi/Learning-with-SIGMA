@@ -34,6 +34,7 @@ public class BinarySearch
         System.out.println("Pre-requisite : Array should be sorted.");
         System.out.print("Enter key : ");
         int key=sc.nextInt();
+        sc.close();
 
         int series[]={0,2,4,6,8,10,12,14,16,18,20};
         int Index=B_Search(series,key);
