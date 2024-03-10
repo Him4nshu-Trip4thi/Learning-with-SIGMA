@@ -9,6 +9,7 @@ public class InputToMatrix
         int r=sc.nextInt();
         System.out.print("Enter no. of Columns : ");
         int c=sc.nextInt();
+        sc.close();
 
         int matrix [][]=new int [r][c];
 
