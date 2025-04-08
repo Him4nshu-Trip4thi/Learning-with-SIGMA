@@ -1,4 +1,3 @@
-package Stack;
 import java.util.*;
 public class Stack_ArrayList{
     static class Stack{

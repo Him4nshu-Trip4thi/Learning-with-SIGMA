@@ -1,5 +1,3 @@
-package Stack;
-
 public class Stack_LinkedList {
     static class Node{
         int data;
