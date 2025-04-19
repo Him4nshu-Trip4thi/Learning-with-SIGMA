@@ -40,7 +40,7 @@ public class MaxAreaInHistogram{
             int h=arr[i];
             int w=nsr[i]-nsl[i]-1;
             int currArea=h*w;
-            maxArea=Math.max(maxArea,currArea);
+             maxArea=Math.max(maxArea,currArea);
         }
         System.err.println("The maximum area of Histogram: "+maxArea);
     }
