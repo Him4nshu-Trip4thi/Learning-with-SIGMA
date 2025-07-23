@@ -51,7 +51,7 @@ public class BinaryTreeImplementation{
 
         }
 
-        public static void levelOrder(Node root){
+        public static void levelOrder(Node root){   //BFS using Queue
             Queue<Node> q= new LinkedList<>();
 
             q.add(root);
@@ -76,6 +76,43 @@ public class BinaryTreeImplementation{
                 }
             }
         }
+
+        public static int height(Node root){
+            if(root==null) return 0;
+
+            int leftHeight = height(root.left);
+            int rightHeight = height(root.right);
+
+            int height = Math.max(leftHeight, rightHeight)+1;
+
+            return height;
+        }
+
+        public static int countNodes(Node root){
+            if(root==null){
+                return 0;
+            }
+
+            int lc=countNodes(root.left);
+            int rc=countNodes(root.right);
+
+            int count= lc + rc + 1; //left count + right count + self
+
+            return count;
+        }
+
+        public static int sumOfNodes(Node root){
+            if(root == null) return 0;
+
+            int ls=sumOfNodes(root.left);
+            int rs=sumOfNodes(root.right);
+            int sum = ls + rs + root.data;  //leftsum + rightsum + self value
+
+            return sum;
+
+        }
+
+
     }
     public static void main (String args[]){
         int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
@@ -90,6 +127,10 @@ public class BinaryTreeImplementation{
         System.out.print("The postOrder traversal of the nodes: "); tree.postOrder(root);
         System.out.println();
         System.out.println("The levelOrder traversal of the nodes: "); tree.levelOrder(root);
+        System.out.println();
+        System.out.println("Height of the Tree is : " + tree.height(root));
+        System.out.println("Count of nodes in the Tree is : " + tree.countNodes(root));
+        System.out.println("Sum of nodes in the Tree is : " + tree.sumOfNodes(root));
         
     }
 }
