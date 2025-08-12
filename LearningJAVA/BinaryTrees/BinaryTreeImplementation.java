@@ -1,3 +1,4 @@
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -146,6 +147,63 @@ public class BinaryTreeImplementation{
 
         }
 
+        static class Info{
+            Node node;
+            int hd;
+
+            public Info(Node node, int hd){
+                this.node=node;
+                this.hd=hd;
+            }
+        }
+
+        public static void topView(Node root){
+
+            //Idea of level order traversal
+
+            Queue<Info> q=new LinkedList<>();
+            HashMap<Integer,Node> map=new HashMap<>();
+
+            int min=0;
+            int max=0;
+            q.add(new Info(root,0));
+            q.add(null);
+
+            while(!q.isEmpty()){
+                Info curr=q.remove();
+                if(curr==null){
+                    if(q.isEmpty()){
+                        break;
+                    }
+                    else{
+                        q.add(null);
+                    }
+                }
+                else{
+                    if(!map.containsKey(curr.hd)){
+                        map.put(curr.hd, curr.node);
+                    }
+                    if(curr.node.left!=null){
+                        q.add(new Info(curr.node.left,curr.hd-1));
+                        min=Math.min(min, curr.hd-1);
+
+                    }
+                    if(curr.node.right!=null){
+                        q.add(new Info(curr.node.right, curr.hd+1));
+                        max=Math.max(max,curr.hd+1);
+                    }
+                }
+            }
+
+            System.out.print("The topView of the given tree is: ");
+
+            for(int i=min;i<=max;i++){
+                System.out.print(map.get(i).data);
+            }
+
+
+        }
+
 
     }
     public static void main (String args[]){
@@ -172,7 +230,9 @@ public class BinaryTreeImplementation{
         System.out.println("Count of nodes in the Tree is : " + BinaryTree.countNodes(root));
         System.out.println("Sum of nodes in the Tree is : " + BinaryTree.sumOfNodes(root));
         System.out.println("Diameter of the Tree is : " + BinaryTree.diameter(root));
-        System.out.println(BinaryTree.isSubtree(root, root2));
+        System.out.println("The Tree has a subTree: " + BinaryTree.isSubtree(root, root2));
+
+        BinaryTree.topView(root);
         
     }
 }
