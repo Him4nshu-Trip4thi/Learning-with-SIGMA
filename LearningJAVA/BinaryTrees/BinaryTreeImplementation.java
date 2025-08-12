@@ -125,26 +125,54 @@ public class BinaryTreeImplementation{
             return maxi;
         }
 
+        public static boolean isSubtree(Node root, Node subroot){
+            if(root==null) return false;
+
+            if(root.data == subroot.data){
+                if(isIdentical(root, subroot)) return true;
+
+            }
+            return isSubtree(root.left, subroot) || isSubtree(root.right, subroot);
+        }
+
+        public static boolean isIdentical(Node node, Node subroot){ //helper function for isSubtree
+            if(node==null && subroot==null) return true;
+            if(node==null || subroot==null || node.data != subroot.data) return false;
+
+            if(!isIdentical(node.left, subroot)) return false;
+            if(!isIdentical(node.right, subroot)) return false;
+
+            return true;
+
+        }
+
 
     }
     public static void main (String args[]){
-        int nodes[]={1,2,4,-1,-1,5,-1,-1,3,-1,6,-1,-1};
-        BinaryTree tree=new BinaryTree();
-        Node root=tree.buildTree(nodes);
+        int nodes[]={1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
+        BinaryTree.idx=-1;
+        Node root=BinaryTree.buildTree(nodes);
+
+        int subnodes[] = {2, 4, -1, -1, 5, -1, -1};
+        BinaryTree.idx=-1;
+        Node root2=BinaryTree.buildTree(subnodes);
+
+
         System.out.println("Root of the tree: "+root.data);
 
-        System.out.print("The preOrder traversal of the nodes: "); tree.preOrder(root);
+        System.out.print("The preOrder traversal of the nodes: "); BinaryTree.preOrder(root);
         System.out.println();
-        System.out.print("The inOrder traversal of the nodes: "); tree.inOrder(root);
+        System.out.print("The inOrder traversal of the nodes: "); BinaryTree.inOrder(root);
         System.out.println();
-        System.out.print("The postOrder traversal of the nodes: "); tree.postOrder(root);
+        System.out.print("The postOrder traversal of the nodes: "); BinaryTree.postOrder(root);
         System.out.println();
-        System.out.println("The levelOrder traversal of the nodes: "); tree.levelOrder(root);
+        System.out.println("The levelOrder traversal of the nodes: "); BinaryTree.levelOrder(root);
         System.out.println();
-        System.out.println("Height of the Tree is : " + tree.height(root));
-        System.out.println("Count of nodes in the Tree is : " + tree.countNodes(root));
-        System.out.println("Sum of nodes in the Tree is : " + tree.sumOfNodes(root));
-        System.out.println("Diameter of the Tree is : " + tree.diameter(root));
+        System.out.println("Height of the Tree is : " + BinaryTree.height(root));
+        System.out.println("Count of nodes in the Tree is : " + BinaryTree.countNodes(root));
+        System.out.println("Sum of nodes in the Tree is : " + BinaryTree.sumOfNodes(root));
+        System.out.println("Diameter of the Tree is : " + BinaryTree.diameter(root));
+        System.out.println(BinaryTree.isSubtree(root, root2));
         
     }
 }
